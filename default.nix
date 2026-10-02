@@ -6,7 +6,6 @@
   setuptools ? pkgs.python3Packages.setuptools,
   numpy ? pkgs.python3Packages.numpy,
   torch ? pkgs.python3Packages.torch,
-  matplotlib ? pkgs.python3Packages.matplotlib,
 }:
 let
   project = (lib.importTOML ./pyproject.toml).project;
@@ -46,6 +45,5 @@ buildPythonPackage (finalAttrs: {
   doCheck = true;
   nativeCheckInputs = [
     python3Packages.pytestCheckHook
-    matplotlib
   ];
 })
